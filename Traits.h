@@ -36,7 +36,7 @@
 #include "SamplerMyImpl1.h"
 #include "Sampler_BruFabJoa.h"
 #include "FitterMyImpl1.h"
-//#include "FitterJoaoSouto.h"
+#include "FitterJoaoSouto.h"
 #include "ModelCheckerMyImpl1.h"
 #include "ParserMyImpl1.h"
 #include "IntegratorMyImpl1.h"
@@ -65,8 +65,8 @@ struct Traits {
 };
 
 template <> struct Traits<GenesysApplication_if> {
-	//typedef TestInputAnalyserTools Application;  
-	typedef BuildSimulationModel Application;  
+	typedef TestInputAnalyserTools Application;  
+//	typedef BuildSimulationModel Application;  
 	//typedef TestParser Application;  
 };
 
@@ -91,8 +91,8 @@ template <> struct Traits<Sampler_if> {
 
 template <> struct Traits<Fitter_if> {
 	//typedef FitterMyImpl1 Implementation;
-	typedef FitterFabiola Implementation;
-    //typedef FitterJoaoSouto Implementation;
+//	typedef FitterFabiola Implementation;
+        typedef FitterJoaoSouto Implementation;
 };
 
 template <> struct Traits<Collector_if> {
